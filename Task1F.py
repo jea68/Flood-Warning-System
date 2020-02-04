@@ -16,7 +16,6 @@ def typical_range_consistent(self):
 
 def inconsistent_typical_range__stations(stations):
     y = []
-    true_stations = []
     for station in stations:
         typical_range = station.typical_range
         if typical_range == None:
