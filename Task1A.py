@@ -17,13 +17,10 @@ def run():
     # Display data from 3 stations:
     for station in stations:
         if station.name in [
-                'Bourton Dickler', 'Surfleet Sluice', 'Gaw Bridge'
+                'Bourton Dickler', 'Surfleet Sluice', 'Gaw Bridge', 'Addlestone'
         ]:
             print(station)
-            print(station.coord)
-
 
 if __name__ == "__main__":
     print("*** Task 1A: CUED Part IA Flood Warning System ***")
     run()
-
