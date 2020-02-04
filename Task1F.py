@@ -4,31 +4,27 @@ from floodsystem.stationdata import build_station_list
 stations = build_station_list()
 
 
-def typical_range_consistent(self):
-    for station in self:
-        typical_range = station.typical_range
-        if typical_range == None:
-            print(False)
-        else:
-            difference = typical_range[0] - typical_range[1]
-            print(difference < 0)
 
+
+def typical_range_consistent(self):
+    typical_range = self.typical_range
+    if typical_range == None:
+        return False
+    else:
+        difference = typical_range[0] - typical_range[1]
+        if difference < 0:
+            return True
+        else:
+            return False
 
 def inconsistent_typical_range__stations(stations):
     y = []
     for station in stations:
-        typical_range = station.typical_range
-        if typical_range == None:
+        typical_range = station.typical_range_consistent()
+        if typical_range == False:
             z = ["{}".format(station.name)]
-            y = y + z
-        else:
-            difference = typical_range[0] - typical_range[1]
-            if difference > 0:
-                x = ["{}".format(station.name)]
-                y = y + x
-    
+            y = y + z    
     false_stations = sorted(y)
     return false_stations
 
 print(inconsistent_typical_range__stations(stations))
-print(typical_range_consistent(self=stations))
