@@ -38,3 +38,14 @@ class MonitoringStation:
         d += "   river:         {}\n".format(self.river)
         d += "   typical range: {}".format(self.typical_range)
         return d
+
+    def typical_range_consistent(self):
+        typical_range = self.typical_range
+        if typical_range == None:
+            return False
+        else:
+            difference = typical_range[0] - typical_range[1]
+            if difference < 0:
+                return True
+            else:
+                return False
