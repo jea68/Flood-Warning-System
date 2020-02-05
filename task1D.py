@@ -41,9 +41,4 @@ def stations_by_river(stations):
     print("the stations near the River Thames is: ", river_Thames)
 rivers_with_station(stations)
 
-import my_test_station
-rivers_with_station(my_test_station)
-assert len(river_Aire) == 0
-assert len(river_Cam) == 0
-assert len(river_Thames) == 0
-assert ordered_rivers == {"River East":"East Ham","River South":"Stratford"}
+
