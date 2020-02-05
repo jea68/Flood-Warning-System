@@ -5,7 +5,17 @@
 for manipulating/modifying station data
 
 """
+def inconsistent_typical_range__stations(stations):
+    y = []
+    for station in stations:
+        typical_range = station.typical_range_consistent()
+        if typical_range == False:
+            z = ["{}".format(station.name)]
+            y = y + z    
+    false_stations = sorted(y)
+    return false_stations
 
+    
 
 class MonitoringStation:
     """This class represents a river level monitoring station"""
@@ -38,3 +48,14 @@ class MonitoringStation:
         d += "   river:         {}\n".format(self.river)
         d += "   typical range: {}".format(self.typical_range)
         return d
+
+    def typical_range_consistent(self):
+        typical_range = self.typical_range
+        if typical_range == None:
+            return False
+        else:
+            difference = typical_range[0] - typical_range[1]
+            if difference < 0:
+                return True
+            else:
+                return False
