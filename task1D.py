@@ -12,18 +12,17 @@ def rivers_with_station(stations):
     for station in stations:
         station_rivers[station.river] = station.name
     stations_by_river(stations)
-        
+   
 def stations_by_river(stations):
     global station_rivers
     global river_Aire
     global river_Cam
     global river_Thames
     global ordered_rivers
-    for station in stations: 
-        ordered_rivers = sorted(station_rivers)
+    ordered_rivers = sorted(station_rivers)
     print(ordered_rivers)
     print("the number of stations that has a river near it is ", len(station_rivers))
-    river_Aire =[]
+    river_Aire = []
     river_Cam = []
     river_Thames = []
     for station in stations:    
@@ -39,6 +38,7 @@ def stations_by_river(stations):
     print("the stations near the River Cam is: ", river_Cam)
     print("")
     print("the stations near the River Thames is: ", river_Thames)
+    print("")
 rivers_with_station(stations)
 
-
+station_rivers = {}
