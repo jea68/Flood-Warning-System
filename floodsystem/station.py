@@ -5,7 +5,17 @@
 for manipulating/modifying station data
 
 """
+def inconsistent_typical_range__stations(stations):
+    y = []
+    for station in stations:
+        typical_range = station.typical_range_consistent()
+        if typical_range == False:
+            z = ["{}".format(station.name)]
+            y = y + z    
+    false_stations = sorted(y)
+    return false_stations
 
+    
 
 class MonitoringStation:
     """This class represents a river level monitoring station"""
