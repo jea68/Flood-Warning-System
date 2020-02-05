@@ -4,12 +4,14 @@ from floodsystem.stationdata import build_station_list
 from haversine import haversine, Unit
 import python_utils
 stations = build_station_list()
+global ordered
 def sorted_by_key(x, i, reverse=False):
     def key(element):
         return element[i]
     return sorted(x, key=key, reverse=reverse)
 
 def stations_by_distance(stations, p):
+    global ordered
     stations = build_station_list()
     stat_town_dist = []
     for station in stations:
@@ -22,5 +24,8 @@ def stations_by_distance(stations, p):
 
 stations_by_distance(stations, p)
 
-
+import my_test_station
+p = (4, 5)
+stations_by_distance(my_test_station, p)
+assert ordered == [("Upton Park", 5 ,"East Ham"), ("Stratford", 13, "Stratford")]
 
