@@ -18,7 +18,9 @@ test:
   - python Task1C.py
   - python Task1E.py
   - python Task1F.py
-  - python test_river_by_station_number.py
+  - python test_river-by-station-number.py
+  - python test_typical-range-task1F.py
+  - python test_stations-within-radius.py
 
 
   - python Task2A.py
