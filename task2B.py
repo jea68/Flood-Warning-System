@@ -1,3 +1,4 @@
+#task 2B
 from floodsystem.stationdata import build_station_list, update_water_levels
 from floodsystem.station import MonitoringStation
 stations = build_station_list()
@@ -19,11 +20,11 @@ def stations_level_over_threshold(stations, tol):
         if station.latest_level > tol:
             station_level.append((station.name, station.latest_level))
     station_level.sort(key=lambda x: float(x[1]), reverse=True)
-    stations_highest_rel_level(station_level, len(station_level))
+    print(station_level)
+    return station_level
+    
 
 
-def stations_highest_rel_level(stations, N):
-    highest = stations[0:10]
-    print(highest)
-    return(highest)
 relative_water_level(stations)
+
+
