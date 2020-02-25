@@ -4,11 +4,14 @@ import matplotlib.pyplot as plt
 import datetime
 from floodsystem.datafetcher import fetch_measure_levels
 from floodsystem.stationdata import build_station_list
+from dateutil.tz import tzutc
+from numpy import poly1d
 
 stations = build_station_list()
 
 
 def polyfit(dates, levels, p):
+    np.poly1d
 
     x = matplotlib.dates.date2num(dates)
     y = levels
@@ -21,5 +24,4 @@ def polyfit(dates, levels, p):
     poly = np.poly1d(p_coeff)
     d0 = x[0]
     return (poly, d0)
-
 

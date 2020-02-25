@@ -39,7 +39,6 @@ def plot_water_level_with_fit(station, dates, levels, p):
 # Convert coefficient into a polynomial that can be evaluated
 # e.g. poly(0.3)
     poly = np.poly1d(p_coeff)
-    d0 = x[0]
 
     x1 = np.linspace(x[0], x[-1], 30)
     plt.plot(x1, poly(x1 - x[0]), label = "Polynomial Fit", color = "red")
