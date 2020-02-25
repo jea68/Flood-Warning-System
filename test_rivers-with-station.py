@@ -35,5 +35,4 @@ def test_stations_by_river():
     
     test_stations = [a, b, c]
     output_dic = stations_by_river(test_stations)
-    assert output_dic == ([], [], ['station']) 
-test_stations_by_river()
+    assert output_dic == ([], [], ['station'])
