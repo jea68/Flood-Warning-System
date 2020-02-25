@@ -25,3 +25,7 @@ test:
 
   - python Task2A.py
   - python Task2D.py
+  - python Task2E.py
+  - python Task2F.py
+  - python test_polyfitTask2F.py
+  
