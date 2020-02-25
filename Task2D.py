@@ -44,7 +44,7 @@ def run():
 
     # Print level history
     for date, level in zip(dates, levels):
-        print(date, level)
+        print(date,level)
 
 
 if __name__ == "__main__":

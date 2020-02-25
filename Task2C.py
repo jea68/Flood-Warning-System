@@ -1,8 +1,10 @@
 from floodsystem.stationdata import build_station_list, update_water_levels
 from floodsystem.station import MonitoringStation
+
 stations = build_station_list()
-update_water_levels(stations)
+
 def stations_highest_rel_level(stations, N):
+    update_water_levels(stations)
     station_level =[]
     tol = 0.8
     for station in stations:
@@ -15,4 +17,4 @@ def stations_highest_rel_level(stations, N):
     print(highest)
     return(highest)
   
-stations_highest_rel_level(stations, 10)
+stations_highest_rel_level(stations, N = 5)

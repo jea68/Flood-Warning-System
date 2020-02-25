@@ -14,7 +14,7 @@ def run():
 
     # Print station and latest level for first 5 stations in list
     names = [
-        'Bourton Dickler', 'Surfleet Sluice', 'Gaw Bridge', 'Hemingford',
+        'Ledgard Bridge', 'Surfleet Sluice', 'Gaw Bridge', 'Hemingford',
         'Swindon'
     ]
     for station in stations:
