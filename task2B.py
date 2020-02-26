@@ -17,7 +17,9 @@ def relative_water_level(self):
 def stations_level_over_threshold(stations, tol):
     station_level =[]
     for station in stations:
-        if station.latest_level > tol:
+        if station.latest_level == None:
+            station_level = station_level
+        elif station.latest_level > tol:
             station_level.append((station.name, station.latest_level))
     station_level.sort(key=lambda x: float(x[1]), reverse=True)
     print(station_level)
