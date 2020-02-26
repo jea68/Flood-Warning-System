@@ -5,16 +5,15 @@ from haversine import haversine, Unit
 import python_utils
 stations = build_station_list()
 global ordered
-global stat_town_dist
 def sorted_by_key(x, i, reverse=False):
     def key(element):
         return element[i]
     return sorted(x, key=key, reverse=reverse)
 
 def stations_by_distance(stations, p):
-    global ordered
-    global stat_town_dist
     stat_town_dist = []
+    global ordered
+    ordered = []
     for station in stations:
         distance = haversine(p, station.coord)
         stat_town_dist.append((station.name, distance, station.town))
@@ -23,8 +22,7 @@ def stations_by_distance(stations, p):
     print("the 10 closest stations are: (", ordered[:10], ")")
     print("")
     print("the 10 furthest stations are: (", ordered[-10:], ")")
+    return(ordered)
 
 stations_by_distance(stations, p)
-stat_town_dist = []
-ordered = []
 

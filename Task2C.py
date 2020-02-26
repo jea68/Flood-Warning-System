@@ -17,4 +17,4 @@ def stations_highest_rel_level(stations, N):
     print(highest)
     return(highest)
   
-stations_highest_rel_level(stations, N = 5)
+stations_highest_rel_level(stations, 10)
