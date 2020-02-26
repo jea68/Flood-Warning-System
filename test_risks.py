@@ -8,7 +8,7 @@ from task2G import risks
 stations = build_station_list()
 update_water_levels(stations)
 
-def test_risk():
+def test_risks():
     output_risk = risks(stations)
     assert output_risk == len(stations)
     

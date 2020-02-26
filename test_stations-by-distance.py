@@ -1,14 +1,9 @@
 from floodsystem.station import MonitoringStation
+from floodsystem.geo import stations_by_distance
+from floodsystem.stationdata import build_station_list
 import test_utils
-import task1B
-from task1B import stations_by_distance
-from haversine import haversine, Unit
-from task1B import ordered
-p =(0,0)
-global test_stations
-
+stations = build_station_list()
 def test_stations_by_distance():
-    global test_stations
     # Create a station
     s_id = "test-id"
     m_id = "test-id"
@@ -38,9 +33,6 @@ def test_stations_by_distance():
     town = "the Town"
     c = MonitoringStation(s_id, m_id, label, coord, trange, river, town)
     test_stations = [a, b, c]
-    stations_by_distance(test_stations, (0,0))
-    assert ordered == [("the station", 333.5852407005897, "the Town"), ("station", 444.7803209341316, "Town"), ("a station", 555.9754011676645, "a Town")]
+    output = stations_by_distance(test_stations, (0,0))
+    assert len(test_stations) == len(output)
     
-  
-
-

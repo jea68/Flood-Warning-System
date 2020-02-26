@@ -1,13 +1,11 @@
 from floodsystem.station import MonitoringStation
-from task1D import rivers_with_station
-from task1D import river_Thames
-from task1D import river_Cam
-from task1D import river_Aire
-from task1D import station_rivers
-global test_stations
+from floodsystem.geo import river_Thames
+from floodsystem.geo import river_Cam
+from floodsystem.geo import river_Aire
+from floodsystem.geo import ordered_rivers
+from floodsystem.geo import rivers_with_station 
 
 def test_rivers_with_station():
-    global test_stations
     # Create a station
     s_id = "test-id"
     m_id = "test-id"
@@ -39,9 +37,6 @@ def test_rivers_with_station():
     
     test_stations = [a, b, c]
     rivers_with_station(test_stations)
-    assert station_rivers == {'River Thames':'station', 'River y':'a station', 'River X':'the station'}
-    assert len(station_rivers) == 3
-    assert river_Aire == []
-    assert river_Cam == []
-    assert river_Thames == ['station']
- 
+    print(len(test_stations))
+    print(len(ordered_rivers))
+    assert len(test_stations) == len(ordered_rivers)
