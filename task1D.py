@@ -2,23 +2,15 @@
 from floodsystem.stationdata import build_station_list
 stations = build_station_list()
 global station_rivers
-global river_Aire
-global river_Cam
-global river_Thames
-global ordered_rivers
-station_rivers = {}
 def rivers_with_station(stations):
     global station_rivers
+    station_rivers = {}
     for station in stations:
         station_rivers[station.river] = station.name
-    stations_by_river(stations)
+    return(station_rivers)
    
 def stations_by_river(stations):
     global station_rivers
-    global river_Aire
-    global river_Cam
-    global river_Thames
-    global ordered_rivers
     ordered_rivers = sorted(station_rivers)
     print(ordered_rivers)
     print("the number of stations that has a river near it is ", len(station_rivers))
@@ -39,6 +31,6 @@ def stations_by_river(stations):
     print("")
     print("the stations near the River Thames is: ", river_Thames)
     print("")
+    return(river_Aire, river_Cam, river_Thames)
 rivers_with_station(stations)
-
-station_rivers = {}
+stations_by_river(stations)
